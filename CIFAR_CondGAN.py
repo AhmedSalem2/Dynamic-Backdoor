@@ -100,12 +100,6 @@ def insertSingleBD(image,BD,label,scale=1):
     return (images)
 
 
-def insertBD(image,BD):
-    images = image.clone()
-    images[:,:,(32-BDSize):,(32-BDSize):] = BD
-    return images
-
-
 def train(args, model, device, train_loader, optimizer, epoch,bdModel,optimizerBD):
     model.train()
     bdModel.train()
